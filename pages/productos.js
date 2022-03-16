@@ -79,7 +79,7 @@ export default function Productos({ notebooks, monitores, pcs, accesorios }) {
                     {pagination && 
                     <div>
                         <div className={styles.containerProducts}>
-                            {pages.map((_, idx) => <button key={idx} onClick={()=>handleNextPage(idx)}>{idx+1}</button>)}
+                            {pages.map((_, idx) => <button className={styles.btnPage} key={idx} onClick={()=>handleNextPage(idx)}>{idx+1}</button>)}
                         </div>
                         <div className={styles.containerProducts}>
                             {pages[currentPage].map((item, idx) =><CardProduct key={idx} pagination={pagination} modelo={item.Modelo} precio={item.Precio} cantidad={item.Cantidad} title={item.Nombre}/>)}

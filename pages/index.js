@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
 import Head from 'next/head'
-import Layout from '../components/Layout'
+import CardProduct from 'components/CardProduct'
 
 import styles from '../styles/index.module.css'
 
+import api from '../products/api'
 
 
 
 
-export default function FirstPost() {
+export default function FirstPost({destacados}) {
 
 	return (
 		<>
@@ -30,7 +31,20 @@ export default function FirstPost() {
 					</div>
 				</div>
 			</section>
+					<div className={styles.destacados}>
+					{destacados.map((item, idx) =><CardProduct key={idx} pagination={true} modelo={item.Modelo} precio={item.Precio} cantidad={item.Cantidad} title={item.Nombre}/>)}
+					</div>
 
 		</>
 	)
 }
+
+
+export async function getStaticProps() {
+
+    return {
+        props: {
+            destacados: await api.destacados(),
+        }
+    }
+};

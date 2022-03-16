@@ -40,6 +40,20 @@
     font-weight: bold;
 }
 
+.btnPage{
+    padding: 10px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btnPage:hover{
+    background-color:gray;
+    color: white;
+}
+
 .aside ul li button{
     cursor: pointer;
     background-color: rgb(135, 163, 163);
