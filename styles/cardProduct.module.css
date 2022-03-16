@@ -1,0 +1,90 @@
+.container{
+    background-color: red;
+    text-align: center;
+    padding:10px;
+    border-radius:10px;
+    width: 360px;
+
+}
+
+.detalle > *{
+    margin-top:10px;
+}
+
+
+.container > * {
+    margin-top: 20px;
+}
+
+.containerImg{
+    position: relative;
+    text-align: center;
+    height: 180px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.container span{
+    display: block;
+}
+
+.containerImg img{
+    width: 300px;
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    display:none;
+}
+
+.container button{
+    border:0px;
+    background-color:white;
+    border-radius:15px;
+    padding: 7px;
+    font-weight: bold;
+    margin:20px 10px;
+}
+
+.container button:active{
+    background-color:red;
+    color: white
+}
+
+.active{
+    animation: anim 1s linear;
+    display: block !important;
+    z-index: 100;
+}
+
+.noActive{
+    display: block !important;
+    animation: anim2 1s linear;
+}
+
+@keyframes anim2 {
+    0%{
+        opacity: 1;
+        transform: translateX(0px)
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(-650px)
+    }
+}
+
+@keyframes anim {
+    0%{
+        opacity: 0;
+        transform: translateX(400px)
+    }
+    80%{
+        transform: translateX(-40px)
+    }
+    90%{
+        transform: translateX(40px)
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}

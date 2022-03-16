@@ -1,0 +1,55 @@
+.container{
+    padding-top: 100px;
+    height: aut0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 'titulo titulo titulo titulo'
+                        'aside aside aside aside'
+                        'contenido contenido contenido contenido'
+}
+
+.titulo{
+    text-align: center;
+    grid-area: titulo;
+}
+
+.containerProducts{
+    grid-area: contenido;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    padding-top: 20px;
+    gap: 40px;
+}
+
+.aside{
+    grid-area: aside;
+    background-color: salmon;
+}
+.aside ul{
+    list-style: none;
+    padding-left: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.aside ul li{
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.aside ul li button{
+    cursor: pointer;
+    background-color: rgb(135, 163, 163);
+    border: 0px;
+    border-radius: 20px;
+    padding: 10px;
+    font-weight: bold;
+    
+}
+
+.aside ul li button:active{
+    background-color: red;
+}
