@@ -14,7 +14,7 @@
 }
 
 .navF{
-    background-color: blue;
+    background-color: #0F2537;
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -86,7 +86,7 @@
 
 .footer{
     height: auto;
-    background: #16425b;
+    background: #0F2537;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -192,7 +192,7 @@
     transition: all 0.2s linear;
     height: 150px;
     overflow:hidden;
-    background-color: blue;
+    background-color: #0F2537;
 }
 
 .navResponseOculto{

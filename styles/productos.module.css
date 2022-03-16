@@ -1,6 +1,7 @@
 .container{
+    background-color:#20374C;
     padding-top: 100px;
-    height: aut0;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 'titulo titulo titulo titulo'
@@ -10,6 +11,7 @@
 
 .titulo{
     text-align: center;
+    color: white;
     grid-area: titulo;
 }
 
@@ -20,11 +22,12 @@
     justify-content:center;
     padding-top: 20px;
     gap: 40px;
+    margin-bottom: 20px;
 }
+
 
 .aside{
     grid-area: aside;
-    background-color: salmon;
 }
 .aside ul{
     list-style: none;
@@ -54,16 +57,43 @@
     color: white;
 }
 
-.aside ul li button{
+.btnActive{
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 7px;
+    font-weight: bold;
     cursor: pointer;
-    background-color: rgb(135, 163, 163);
+    background-color:gray;
+    color: white;
+}
+
+.modeActive{
+    cursor: pointer;
+    background-color: #3459E6;
     border: 0px;
     border-radius: 20px;
     padding: 10px;
     font-weight: bold;
+    color: white;
+}
+
+.aside ul li button{
+    cursor: pointer;
+    background-color: #4184C5;
+    border: 0px;
+    border-radius: 20px;
+    padding: 10px;
+    font-weight: bold;
+    color: white;
     
 }
 
 .aside ul li button:active{
-    background-color: red;
+    background-color: #3459E6;
+}
+
+.titleModo{
+    margin-top:30px;
+    text-align: center;
+    color: white;
 }

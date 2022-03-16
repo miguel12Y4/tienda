@@ -21,6 +21,8 @@ export default function Productos({ notebooks, monitores, pcs, accesorios }) {
 
     const [productos, setProdutos] = useState(list);
 
+    const [titleModo, setTitle] = useState('Todos')
+
 
     const [pagination, setPagination] = useState(false)
 
@@ -40,14 +42,19 @@ export default function Productos({ notebooks, monitores, pcs, accesorios }) {
     const changeProducts = (mod)=>{
         if(mod===modo.todo){
             setProdutos(list);
+            setTitle('Todos');
         }else if(mod===modo.notebook){
             setProdutos(notebooks)
+            setTitle('Notebooks');
         }else if(mod===modo.monitor){
             setProdutos(monitores)
+            setTitle('Monitores');
         }else if(mod===modo.pc){
             setProdutos(pcs)
+            setTitle('PCs de escritorio');
         }else if(mod===modo.accesorios){
             setProdutos(accesorios)
+            setTitle('Accesorios');
         }
     }
     
@@ -79,7 +86,10 @@ export default function Productos({ notebooks, monitores, pcs, accesorios }) {
                     {pagination && 
                     <div>
                         <div className={styles.containerProducts}>
-                            {pages.map((_, idx) => <button className={styles.btnPage} key={idx} onClick={()=>handleNextPage(idx)}>{idx+1}</button>)}
+                            {pages.map((_, idx) => <button className={idx===currentPage?styles.btnActive:styles.btnPage} key={idx} onClick={()=>handleNextPage(idx)}>{idx+1}</button>)}
+                        </div>
+                        <div className={styles.titleModo}>
+                        <h2>{titleModo}</h2>
                         </div>
                         <div className={styles.containerProducts}>
                             {pages[currentPage].map((item, idx) =><CardProduct key={idx} pagination={pagination} modelo={item.Modelo} precio={item.Precio} cantidad={item.Cantidad} title={item.Nombre}/>)}
@@ -96,7 +106,7 @@ export default function Productos({ notebooks, monitores, pcs, accesorios }) {
                         </li>
                         <li>
                             <button onClick={() => handleChange(modo.notebook)}>
-                                Computadores
+                                Notebooks
                             </button>
                         </li>
                         <li>
@@ -130,6 +140,7 @@ export async function getStaticProps() {
             monitores: await api.monitores(),
             pcs: await api.pcs(),
             accesorios: await api.accesorios(),
-        }
+        },
+        revalidate:86400,
     }
 };

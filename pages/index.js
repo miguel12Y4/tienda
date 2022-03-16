@@ -10,10 +10,10 @@ import api from '../products/api'
 
 
 
-export default function FirstPost({destacados}) {
+export default function FirstPost({ destacados }) {
 
 	return (
-		<>
+		<div className={styles.cont}>
 			<Head>
 				<title>Tienda de productos</title>
 			</Head>
@@ -25,26 +25,30 @@ export default function FirstPost({destacados}) {
 							<h1>Los mejores productos de computación a los mejores precios</h1>
 							<p>Encuentra: Computadores, Monitores, PCs de escritorio, Accesorios y más</p>
 						</div>
-						<div>
-							<img src="https://picsum.photos/90" alt="" />
+						<div className={styles.imgRigth}>
+							<img src="https://picsum.photos/300/200" alt="" />
 						</div>
 					</div>
 				</div>
 			</section>
-					<div className={styles.destacados}>
-					{destacados.map((item, idx) =><CardProduct key={idx} pagination={true} modelo={item.Modelo} precio={item.Precio} cantidad={item.Cantidad} title={item.Nombre}/>)}
-					</div>
+			<section className={styles.containerDestacados}>
+				<h2>Productos destacados</h2>
+				<div className={styles.destacados}>
+					{destacados.map((item, idx) => <CardProduct key={idx} pagination={true} modelo={item.Modelo} precio={item.Precio} cantidad={item.Cantidad} title={item.Nombre} />)}
+				</div>
+			</section>
 
-		</>
+		</div>
 	)
 }
 
 
 export async function getStaticProps() {
 
-    return {
-        props: {
-            destacados: await api.destacados(),
-        }
-    }
+	return {
+		props: {
+			destacados: await api.destacados(),
+		},
+		revalidate: 86400
+	}
 };

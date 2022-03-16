@@ -1,9 +1,11 @@
 .container{
-    background-color: red;
+    background-color: #4184C5;
     text-align: center;
     padding:10px;
     border-radius:10px;
     width: 360px;
+    color:white;
+    font-weight: bold;
 
 }
 
@@ -38,15 +40,15 @@
 
 .container button{
     border:0px;
-    background-color:white;
     border-radius:15px;
     padding: 7px;
     font-weight: bold;
     margin:20px 10px;
+    cursor:pointer;
 }
 
 .container button:active{
-    background-color:red;
+    background-color:rgb(128, 120, 120);
     color: white
 }
 
