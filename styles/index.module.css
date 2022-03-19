@@ -30,6 +30,10 @@
 .container > div{
     margin:0 auto;
     max-width: 1100px;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -52,6 +56,12 @@
     max-width:800px;
     margin: 0 auto;
     animation: anim 1s linear;
+}
+
+.containerInfo > div:first-child {
+    background-color:#010a25;
+    border-radius: 0px 1000px 1000px 0px;
+    
 }
 
 
@@ -132,7 +142,7 @@
 
 @media screen and (min-width:890px){
     .imgBack{
-        width: 700px;
+        width: 110000px;
     }
 }
 

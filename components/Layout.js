@@ -26,7 +26,7 @@ export default function Layout({ children }) {
         <div className={styles.containerHeader}>
           <header className={styles.header}>
             <div className={styles.logo}>
-              <img src="https://picsum.photos/81" alt="" />
+              <img src="/images/react.png" alt="" />
             </div>
             <div className={styles.search}>
               <form onSubmit={ev => handleSubmit(ev)}>
@@ -95,10 +95,10 @@ export default function Layout({ children }) {
         </div>
         <div>
           <a href="https://github.com/miguel12Y4">
-            <img src="/images/github.png" alt="" />
+            <img src="/iconos/github.png" alt="" />
           </a>
           <a href="https://www.linkedin.com/in/miguel12y4/">
-            <img src="/images/linkedin.png" alt="" />
+            <img src="/iconos/linkedin.png" alt="" />
           </a>
         </div>
 
