@@ -5,7 +5,7 @@
 
 .container{
     width:100%;
-    padding-top:150px;
+    padding-top:100px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
@@ -54,10 +54,7 @@
     animation: anim 1s linear;
 }
 
-.containerInfo > div > *{
-    box-shadow: 5px 1px 20px 5px rgb(5, 3, 3)
 
-}
 
 @keyframes anim {
     0%{

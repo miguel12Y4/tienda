@@ -37,7 +37,7 @@ export default function Productos({ notebooks, monitores, pcs, accesorios }) {
 
     },[productos])
 
-    const [currentPage, seCurrentPage] = useState(1)
+    const [currentPage, seCurrentPage] = useState(0)
 
     const changeProducts = (mod)=>{
         if(mod===modo.todo){
@@ -72,6 +72,16 @@ export default function Productos({ notebooks, monitores, pcs, accesorios }) {
         seCurrentPage(0)
     }
 
+    const getTitle = ()=>{
+        switch (titleModo) {
+            case 'Todos':
+                return 'Todos los productos'
+        
+            default:
+                return titleModo
+        }
+    }   
+
     return (
         <>
             <Head>
@@ -79,20 +89,17 @@ export default function Productos({ notebooks, monitores, pcs, accesorios }) {
             </Head>
             <div className={styles.container}>
                 <div className={styles.titulo}>
-                    <h1>Listado de productos</h1>
+                    <h1>Listado de {getTitle()}</h1>
                 </div>
                 <div className={styles.containerProducts}>
-                    {!pagination && productos?.map((item, idx) =><CardProduct key={idx} pagination={pagination} modelo={item.Modelo} precio={item.Precio} cantidad={item.Cantidad} title={item.Nombre}/>)}
+                    {!pagination && productos?.map((item, idx) =><CardProduct key={idx} pagination={pagination} modelo={item.Modelo} precio={item.Precio} cantidad={item.Cantidad} title={item.Nombre} item={item}/>)}
                     {pagination && 
                     <div>
                         <div className={styles.containerProducts}>
+                            {pages[currentPage].map((item, idx) =><CardProduct key={idx} pagination={pagination} modelo={item.Modelo} precio={item.Precio} cantidad={item.Cantidad} title={item.Nombre} item={item}/>)}
+                        </div>
+                        <div className={styles.containerPages}>
                             {pages.map((_, idx) => <button className={idx===currentPage?styles.btnActive:styles.btnPage} key={idx} onClick={()=>handleNextPage(idx)}>{idx+1}</button>)}
-                        </div>
-                        <div className={styles.titleModo}>
-                        <h2>{titleModo}</h2>
-                        </div>
-                        <div className={styles.containerProducts}>
-                            {pages[currentPage].map((item, idx) =><CardProduct key={idx} pagination={pagination} modelo={item.Modelo} precio={item.Precio} cantidad={item.Cantidad} title={item.Nombre}/>)}
                         </div>
                     </div>
                     }

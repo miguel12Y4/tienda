@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import Head from 'next/head'
+
 import Layout from '../components/Layout'
 
 import styles from '../styles/contacto.module.css'
@@ -12,6 +14,9 @@ export default function FirstPost() {
 
 	return (
 		<>
+			<Head>
+				<title>Contacto</title>
+			</Head>
 			<section className={styles.sectionForm}>
 				<div className={styles.containerForm}>
 					<h2>Formulario de contacto</h2>

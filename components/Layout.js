@@ -16,6 +16,10 @@ export default function Layout({ children }) {
     setOpenNav(e => !e)
   }
 
+  const handleSubmit = (ev)=>{
+    ev.preventDefault();
+    alert('Lo sentimos esta funcion no está implementada aún')
+  }
   return (
     <div className={styles.d}>
       <div className={styles.navF}>
@@ -25,7 +29,7 @@ export default function Layout({ children }) {
               <img src="https://picsum.photos/81" alt="" />
             </div>
             <div className={styles.search}>
-              <form>
+              <form onSubmit={ev => handleSubmit(ev)}>
                 <input type="text" name="" id="" />
                 <button type="submit" className={styles.btnSearch}>
                   <img src="/iconos/lupa.png" alt="" />

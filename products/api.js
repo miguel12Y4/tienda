@@ -10,7 +10,6 @@ export default {
                 papa.parse(response.data, {
                     header: true, //primer elemento de la tabla es el header,
                     complete: results =>{
-                        console.log(results.data);
                         return resolve(results.data);
                     },
                     error: error =>{
@@ -29,7 +28,6 @@ export default {
                 papa.parse(response.data, {
                     header: true, //primer elemento de la tabla es el header,
                     complete: results =>{
-                        console.log(results.data);
                         return resolve(results.data);
                     },
                     error: error =>{
@@ -48,7 +46,6 @@ export default {
                 papa.parse(response.data, {
                     header: true, //primer elemento de la tabla es el header,
                     complete: results =>{
-                        console.log(results.data);
                         return resolve(results.data);
                     },
                     error: error =>{
@@ -67,7 +64,6 @@ export default {
                 papa.parse(response.data, {
                     header: true, //primer elemento de la tabla es el header,
                     complete: results =>{
-                        console.log(results.data);
                         return resolve(results.data);
                     },
                     error: error =>{
@@ -86,7 +82,6 @@ export default {
                 papa.parse(response.data, {
                     header: true, //primer elemento de la tabla es el header,
                     complete: results =>{
-                        console.log(results.data);
                         return resolve(results.data);
                     },
                     error: error =>{
